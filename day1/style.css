@@ -1,0 +1,67 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+ *{
+    box-sizing: border-box;
+  
+ }
+
+ body {
+  font-family: 'Muti', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: #e0e0e0;
+ }
+
+
+ .container {
+   display: flex;
+   width: 90vw;  
+   height: 80vh;
+   flex-direction: row;
+   gap: 1rem; 
+ 
+
+ 
+ }
+
+.panel {
+  flex: 1;                           
+  border-radius: 150px;
+  
+  overflow: hidden;                
+  
+ 
+  background-size: cover;
+  background-position: center;
+  
+  display: flex;
+  align-items: flex-end;            
+  padding: 0.5rem;                     
+  
+  cursor: pointer;
+  position: relative;   
+  transition: flex 0.7s ease-in-out 0.1s;
+    
+}
+
+.panel h3 {
+  color: white;                     
+  font-size: 1.5rem;                
+  opacity: 0;   
+  transition: opacity 0.1s ease-in-out 0s;
+}
+
+.panel.active {
+  flex: 12;                           
+  border-radius: 20px;              
+}
+
+.panel.active h3 {
+  opacity: 1;                        
+}
