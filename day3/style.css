@@ -1,161 +1,234 @@
-    body {
-        font-family: 'Lato', sans-serif;
-        background-color: #333;
-        color: #222;
-        overflow-x: hidden;
-        margin: 0;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-    * {
-        box-sizing: border-box;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    .container {
-        background-color: #fafafa;
-        width: 100vw;
-        min-height: 100vh;
-        padding: 50px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        transform: rotate(0deg);
-        transform-origin: top left;
-        transition: transform 0.6s ease-in-out;
-    }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #333;
+    color: #222;
+    overflow-x: hidden;
+    margin: 0;
+}
 
-    .content {
-        max-width: 1000px;
-        margin: 00px auto;
-    }
+.container {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transform: rotate(0deg);
+    transform-origin: top left;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
 
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
-    img {
+.content h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+img {
     max-width: 100%;
     height: auto;
-    margin: 1rem 0;
-    border-radius: 5px;
-    }
+    margin: 2rem 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
 
+img:hover {
+    transform: scale(1.02);
+}
 
+.content p {
+    color: #34495e;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+}
 
-    .content p {
-        color: #333;
-        line-height: 1.5;
-    }
+.content small {
+    color: #7f8c8d;
+    font-style: italic;
+    font-size: 0.9rem;
+}
 
+.content h3 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem 0;
+}
 
+.cirle {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3d3e41ff 0%, #554861ff 100%);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+}
 
-    .content small {
-        color: #555;
-        font-style: italic;
-    }
-
-
-
-
-
-    .cirle {
-        position: fixed;
-        top: -100px;
-        left: -100px;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        background: linear-gradient(to bottom, #ff7979, #badc58);
-        border-radius: 50%;
-        
-    
-    }
-
-    .cirle button {
+.cirle button {
     cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
     height: 100px;
+    width: 100px;
     background: transparent;
     border: 0;
-    font-size: 26px;
+    font-size: 28px;
     color: #fff;
-    }
+    transition: all 0.3s ease;
+}
 
+.cirle button:hover {
+    transform: scale(1.1);
+    color: #f39c12;
+}
 
-    .cirle button#open {
-    left: 60%;  
-    transition: transform 0.6s ease-in-out;
+.cirle button#open {
+    left: 45%;  
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     transform: rotate(0deg);
     transform-origin: top left; 
+}
 
+.cirle button#close {
+    left: 45%;
+    transform: rotate(90deg);
+    transform-origin: top left; 
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    }
+.cirle button#close.active {
+    transform: rotate(20deg);
+}
 
-    .cirle button#close {
-        left: 60%;
-        transform: rotate(90deg);
-        transform-origin: top left; 
-        transition: transform 0.6s ease-in-out;
+.cirle button#open.active {
+    transform: rotate(-90deg);
+}
 
-    }
-    .cirle button#close.active {
-     transform: rotate(20deg);
-
-  
-    }
-    .cirle button#open.active {
-     transform: rotate(-90deg);
-  
-    }
-
-
-
-    .container.active {
+.container.active {
     transform: rotate(-20deg);
-    }
+}
 
-    .nav {
-        position: fixed;
-        bottom: 40px;
-        left: 0;
-        z-index: 100;
-    }
+.nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
 
-    .nav ul {
-        list-style-type: none;
-        padding-left: 30px;
-        margin: 0;
-    }
+.nav ul {
+    list-style-type: none;
+    padding-left: 40px;
+    margin: 0;
+}
 
-    .nav li {
-        text-transform: uppercase;
-        color: #fff;
-        margin: 20px 0;
-        transform: translateX(-150%);
-        transition: transform 0.4s ease-in-out;
-    }
+.nav li {
+    text-transform: uppercase;
+    color: #fff;
+    margin: 25px 0;
+    transform: translateX(-150%);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+    letter-spacing: 2px;
+}
 
-    .nav li:nth-of-type(1) {
-        transition-delay: 0.1s;
-    }
+.nav li:nth-of-type(1) {
+    transition-delay: 0.1s;
+}
 
-    .nav li:nth-of-type(2) {
-        transition-delay: 0.2s;
-    }
+.nav li:nth-of-type(2) {
+    transition-delay: 0.25s;
+}
 
-    .nav li:nth-of-type(3) {
-        transition-delay: 0.3s;
-    }
+.nav li:nth-of-type(3) {
+    transition-delay: 0.4s;
+}
 
-    .nav.active li {
-        transform: translateX(0);
-        transition-delay: 0.3s;
-    }
+.nav.active li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
 
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    position: relative;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f39c12, #e74c3c);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav a:hover::before {
+    width: 100%;
+}
+
+.nav a:hover {
+    color: #f39c12;
+    transform: translateX(10px);
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+    
+    .content h1 {
+        font-size: 2rem;
+    }
+    
+    .content p {
+        font-size: 1rem;
+    }
+    
     .nav a {
-        color: #fff;
-        text-decoration: none;
         font-size: 18px;
-        font-weight: bold;
-        letter-spacing: 1px;
     }
+    
+    .cirle {
+        width: 150px;
+        height: 150px;
+        top: -75px;
+        left: -75px;
+    }
+    
+    .cirle button {
+        font-size: 24px;
+    }
+}
 
     
